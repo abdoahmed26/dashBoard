@@ -1,31 +1,18 @@
-import {
-  RoseBox,
-  RandomAnimate,
-  WaveText,
-  useRenderTime,
-  ShinyText,
-  ShinyButton,
-} from "larose-js";
-import "./App.css";
+import React from "react";
+import OverView from "./Components/OverView/OverView";
+import RightSideBar from "./Components/RightSideBar/RightSideBar";
+import LeftSideBar from "./Components/leftSideBar/LeftSideBar";
 export default function App() {
-  const renderTime = useRenderTime();
-
-  let open_docs = () => {
-    window.open("https://larose.vercel.app");
-  };
-
   return (
-    <RoseBox RoseName="App">
-      <WaveText>let's Start Development</WaveText>
-      <RandomAnimate edit={{}}>Hello world</RandomAnimate>
-      <ShinyButton ShinyButtonEvent={open_docs}>
-        <ShinyText edit={{ color: "white" }}>Learn LaRose</ShinyText>
-      </ShinyButton>
-      <div>
-        {renderTime !== null && (
-          <p>Render time Speed: {renderTime.toFixed(2)} ms</p>
-        )}
-      </div>
-    </RoseBox>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+      }}
+    >
+      <LeftSideBar />
+      <OverView />
+      <RightSideBar />
+    </div>
   );
 }

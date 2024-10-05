@@ -1,0 +1,57 @@
+.navbar {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  border-bottom: 1px solid gray;
+  color: white;
+}
+.navbar :nth-child(n):not(input) {
+  cursor: pointer;
+}
+.navbar ul {
+  display: flex;
+  gap: 2rem;
+}
+.navbar :nth-child(n) {
+  list-style: none;
+}
+.searchBar {
+  height: 2rem;
+  width: 13rem;
+  background: rgb(50, 50, 50);
+  color: rgb(91, 91, 91);
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  position: relative;
+}
+
+.search {
+  background: transparent;
+  border: none;
+  height: 100%;
+  width: 100%;
+  color: rgb(91, 91, 91);
+  outline: none;
+}
+
+.search::placeholder {
+  color: rgb(91, 91, 91);
+  opacity: 0.7;
+}
+
+.searchBar div {
+  margin-right: 0.5rem;
+}
+
+.searchBarParent {
+  width: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
