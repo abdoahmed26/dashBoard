@@ -33,6 +33,10 @@
   position: relative;
   z-index: 999;
 }
+.navbar .bar:hover {
+  cursor: pointer;
+  translate: 0 -5px;
+}   
 .bar::before {
   content: "";
   position: absolute;

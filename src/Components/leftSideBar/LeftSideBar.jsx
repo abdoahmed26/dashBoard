@@ -49,19 +49,20 @@ export default function LeftSideBar() {
           <details
             className={styles.details}
             open={openSection === "eCommerce"}
-            onClick={() => toggleSection("eCommerce")}
           >
-            <summary className={styles.summary}>
+            <summary
+              className={styles.summary}
+              onClick={() => toggleSection("eCommerce")}
+            >
               {Icons.Ecommerce} eCommerce
             </summary>
           </details>
 
-          <details
-            className={styles.details}
-            open={openSection === "Projects"}
-            onClick={() => toggleSection("Projects")}
-          >
-            <summary className={styles.summary}>
+          <details className={styles.details} open={openSection === "Projects"}>
+            <summary
+              className={styles.summary}
+              onClick={() => toggleSection("Projects")}
+            >
               {Icons.Folder} Projects
             </summary>
           </details>
@@ -69,9 +70,11 @@ export default function LeftSideBar() {
           <details
             className={styles.details}
             open={openSection === "OnlineCourses"}
-            onClick={() => toggleSection("OnlineCourses")}
           >
-            <summary className={styles.summary}>
+            <summary
+              className={styles.summary}
+              onClick={() => toggleSection("OnlineCourses")}
+            >
               {Icons.openBook} Online Courses
             </summary>
           </details>
@@ -81,9 +84,11 @@ export default function LeftSideBar() {
           <details
             className={styles.details}
             open={openSection === "UserProfile"}
-            onClick={() => toggleSection("UserProfile")}
           >
-            <summary className={styles.summary}>
+            <summary
+              className={styles.summary}
+              onClick={() => toggleSection("UserProfile")}
+            >
               {Icons.userProfile} User Profile
             </summary>
             {/* Sub-menu inside collapsible */}
@@ -96,12 +101,11 @@ export default function LeftSideBar() {
             </div>
           </details>
 
-          <details
-            className={styles.details}
-            open={openSection === "Account"}
-            onClick={() => toggleSection("Account")}
-          >
-            <summary className={styles.summary}>
+          <details className={styles.details} open={openSection === "Account"}>
+            <summary
+              className={styles.summary}
+              onClick={() => toggleSection("Account")}
+            >
               {Icons.account} Account
             </summary>
           </details>
@@ -109,25 +113,31 @@ export default function LeftSideBar() {
           <details
             className={styles.details}
             open={openSection === "Corporate"}
-            onClick={() => toggleSection("Corporate")}
           >
-            <summary className={styles.summary}>{Icons.man} Corporate</summary>
+            <summary
+              className={styles.summary}
+              onClick={() => toggleSection("Corporate")}
+            >
+              {Icons.man} Corporate
+            </summary>
           </details>
 
-          <details
-            className={styles.details}
-            open={openSection === "Blog"}
-            onClick={() => toggleSection("Blog")}
-          >
-            <summary className={styles.summary}>{Icons.blog} Blog</summary>
+          <details className={styles.details} open={openSection === "Blog"}>
+            <summary
+              className={styles.summary}
+              onClick={() => toggleSection("Blog")}
+            >
+              {Icons.blog} Blog
+            </summary>
           </details>
 
-          <details
-            className={styles.details}
-            open={openSection === "Social"}
-            onClick={() => toggleSection("Social")}
-          >
-            <summary className={styles.summary}>{Icons.SMS} Social</summary>
+          <details className={styles.details} open={openSection === "Social"}>
+            <summary
+              className={styles.summary}
+              onClick={() => toggleSection("Social")}
+            >
+              {Icons.SMS} Social
+            </summary>
           </details>
         </nav>
       </section>
