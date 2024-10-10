@@ -1,0 +1,264 @@
+.chat-app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Title for the chat app */
+  .title {
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background: #0084ff;
+    color: #fff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  /* User Avatar styling */
+  .userAvatar {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    justify-content: space-around;
+  }
+  .userAvatar img {
+    object-fit: cover;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+  /* Chat body where messages are displayed */
+  .chat-body {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    background: #fff;
+    overflow-y: auto;
+  }
+  /* Chat messages styling */
+  .message {
+    margin-bottom: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    max-width: 70%;
+    line-height: 1.5;
+    font-size: 1rem;
+    word-wrap: break-word;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  .message.user {
+    align-self: flex-end;
+    background: #0084ff;
+    color: #fff;
+    border-radius: 12px 12px 0 12px;
+  }
+  .message.ai {
+    align-self: flex-start;
+    background: #f1f1f1;
+    color: #333;
+    border-radius: 12px 12px 12px 0;
+  }
+  /* Chat input styling */
+  .chat-input {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-top: 1px solid #ddd;
+    background: #fff;
+  }
+  .chat-input input {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 24px;
+    background: #f1f1f1;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    outline: none;
+    transition: background 0.3s ease;
+  }
+  .chat-input input:focus {
+    background: #e0e0e0;
+  }
+  .chat-input input:disabled {
+    background: #e0e0e0;
+  }
+  /* ShinyButton styling */
+  .shiny-button {
+    background: #0084ff;
+    border: none;
+    border-radius: 24px;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+  .shiny-button:disabled {
+    background: #b0bec5;
+    cursor: not-allowed;
+  }
+  .shiny-button:hover:not(:disabled) {
+    background: #006bb3;
+  }
+  /* Battery alert positioning */
+  .ak-alert {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    background: #ffeb3b;
+    color: #000;
+    padding: 0.8rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    z-index: 1000;
+  }
+  /* Wave animation keyframes */
+  @keyframes wave-animation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  /* Pop-up position styling */
+  .popap {
+    position: absolute;
+    right: 0;
+    top: 10%;
+    width: 24rem;
+  }
+  /* .RemoveBtn {
+    color: red;
+    background: transparent;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    height: 2rem;
+    min-width: 5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+  #SMS {
+    position: relative;
+  }
+  .message-time {
+    width: 100%;
+    text-align: end;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    padding-left: 3rem;
+  }
+  .header-left .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .header-right {
+    text-align: right;
+    padding-right: 3rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  summary {
+    list-style-type: none; /* Firefox */
+  }
+  summary::-webkit-details-marker {
+    display: none; /* Chrome */
+  }
+  .settingIcon {
+    height: 2rem;
+  }
+  .detailesContent {
+    position: absolute;
+    height: 10rem;
+    width: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-top: 3rem;
+    background: blue;
+    right: 2%;
+    border-radius: 14px;
+  }
+  .infopop {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    display: flex;
+    flex-direction: column;
+    min-height: 15rem;
+    width: 20rem;
+    text-align: center;
+    gap: 1rem;
+  }
+  .videoMask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 15rem;
+    width: 20rem;
+    border-radius: 20px;
+    overflow: hidden;
+    translate: -50% -50%;
+  }
+  .TakeVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 20px;
+  }
+  .message-remove-button {
+    background: red;
+    height: 2rem;
+    width: 2rem;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px red;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  

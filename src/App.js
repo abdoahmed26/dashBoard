@@ -1,18 +1,12 @@
 import React from "react";
 import OverView from "./Components/OverView/OverView";
-import RightSideBar from "./Components/RightSideBar/RightSideBar";
-import LeftSideBar from "./Components/leftSideBar/LeftSideBar";
+import ChatPage from "./Components/ChatPage/ChatPage";
+import { RoseRouter, Route } from "larose-js";
 export default function App() {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-      }}
-    >
-      <LeftSideBar />
-      <OverView />
-      <RightSideBar />
-    </div>
+    <RoseRouter>
+      <Route element={<OverView />} path={"/"} />
+      <Route element={<ChatPage />} path={"/ChatPage"} />
+    </RoseRouter>
   );
 }

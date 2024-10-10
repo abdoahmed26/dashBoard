@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./RightSideBar.module.css";
+import { MenuPop } from "larose-js";
 
 const RightSideBar = () => {
   const [rightSideData, setRightSideData] = useState([
@@ -63,7 +64,8 @@ const RightSideBar = () => {
                 className={styles.noteImg}
                 src={ObjectData.img}
                 alt="notification icon"
-              />
+                
+                />
               <h4>{ObjectData.message}</h4>
               {/* Fixed to use ObjectData.message */}
             </div>

@@ -15,7 +15,7 @@
 }
 
 /* Hide sidebar on small screens by default */
-@media (max-width: 768px) {
+@media (max-width: 1303px) {
   .leftSideParent {
     transform: translateX(-100%);
     position: absolute;
@@ -45,7 +45,7 @@
   z-index: 9999;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1303px) {
   .sidebarToggleButton {
     display: block; /* Show button only on small screens */
   }
@@ -121,7 +121,7 @@
   font-weight: bold;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1304px) {
   .sidebarToggleButton {
     display: none;
   }

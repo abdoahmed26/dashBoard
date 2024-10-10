@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./OverView.module.css";
-import { Spring, LineChart, Chart } from "../../Larose";
+import { Spring, LineChart, Chart } from "larose-js";
 import NavBar from "../NavBar/NavBar";
+import RightSideBar from "../RightSideBar/RightSideBar";
+import LeftSideBar from "../leftSideBar/LeftSideBar";
 
 export default function OverView() {
   const data = [
@@ -11,15 +13,17 @@ export default function OverView() {
     { value: 213 },
     { value: 400 },
   ];
-  const dataLine = [
-    [12, 19, 3, 5, 2, 3],
-    [8, 13, 6, 7, 9, 11],
+  const xAxis = {
+    data: ["January", "February", "March", "April", "May", "June", "July"],
+  };
+  const series = [
+    { data: [3, 2, 1, 5, 6, 2, 4] },
+    { data: [2, 3, 4, 1, 5, 7, 6] },
   ];
 
-  const labels = ["January", "February", "March", "April", "May", "June"];
-
   return (
-    <>
+    <div style={{ display: "flex" }}>
+      <LeftSideBar />
       <section className={styles.overflow}>
         <NavBar />
         <div className={styles.title}>
@@ -65,27 +69,26 @@ export default function OverView() {
         <div className={styles.chartsParent}>
           <div className={styles.lineChart}>
             <LineChart
-              data={dataLine}
-              labels={labels}
-              title="Monthly Sales Data"
-              height={200}
-              width={400}
-              lineColors={["#FF5733", "#33C4FF"]}
-              lightLineColors={["#FF9999", "#99D9FF"]}
-              tooltip={true}
-              showSidebar={false}
-              showXAxis={true}
+              xAxis={xAxis}
+              series={series}
+              height={250}
+              margin={{ top: 10, bottom: 10 }}
             />
           </div>
           <div className={styles.chart}>
             <Chart
-              edit={{ border: "none", color: "white", fontWeight: "bold" }}
+              edit={{
+                border: "none",
+                background: "transparent",
+                fontWeight: "bold",
+              }}
               data={data}
               labelStyle={{ background: "#ffeb3b" }}
             />
           </div>
         </div>
       </section>
-    </>
+      <RightSideBar />
+    </div>
   );
 }

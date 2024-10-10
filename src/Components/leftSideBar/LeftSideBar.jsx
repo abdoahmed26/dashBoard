@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styles from "./LeftSideBar.module.css";
-import Avatar from "../../assets/LaRose.webp";
 import Icons from "../../assets/icons/Icons";
-
+import { MenuPop, useRouter } from "larose-js";
 export default function LeftSideBar() {
   // State to manage the open/closed status of collapsible sections
   const [openSection, setOpenSection] = useState(null);
@@ -20,6 +19,31 @@ export default function LeftSideBar() {
     setSidebarOpen(!sidebarOpen);
   };
 
+  let SocialMedia = [
+    {
+      label: "GitHub",
+      onClick: () => window.open("https://github.com/hamdymohamedak"),
+    },
+    {
+      label: "Resume",
+      onClick: () => window.open("https://hamdymohamedak.vercel.app"),
+    },
+    {
+      label: "Portfolio",
+      onClick: () => window.open("https://askander.vercel.app"),
+    },
+    {
+      label: "More",
+      onClick: () =>
+        window.open(
+          "https://github.com/hamdymohamedak/Portfolio-master/blob/main/README.md"
+        ),
+    },
+  ];
+
+  // Router
+
+  let { navigate } = useRouter();
   return (
     <>
       {/* Button to toggle sidebar visibility on small screens */}
@@ -30,19 +54,50 @@ export default function LeftSideBar() {
       <section
         className={`${styles.leftSideParent} ${sidebarOpen ? styles.open : ""}`}
       >
-        <div className={styles.avatar}>
-          <img
-            src={
-              "https://img.freepik.com/free-photo/androgynous-avatar-non-binary-queer-person_23-2151100221.jpg?size=626&ext=jpg&ga=GA1.1.1694168275.1727378374&semt=ais_hybrid"
-            }
-            alt="User Avatar"
-          />
-          <div className={styles.username}>HamdyMohamedak</div>
-        </div>
-
+        <MenuPop
+          items={[
+            {
+              content: (
+                <div>
+                  <div style={{ color: "black" }}>Settings</div>
+                </div>
+              ),
+              // onClick: () => console.log("Bold Item clicked"),
+            },
+            {
+              content: (
+                <div>
+                  <i style={{ color: "black" }}>Profile</i>
+                </div>
+              ),
+              onClick: () => console.log("Italic Item clicked"),
+            },
+            {
+              content: <b style={{ color: "red" }}>Log-out</b>,
+              // onClick: () => console.log("Button clicked"),
+            },
+          ]}
+        >
+          <div className={styles.avatar}>
+            <img
+              src={
+                "https://img.freepik.com/free-photo/androgynous-avatar-non-binary-queer-person_23-2151100221.jpg?size=626&ext=jpg&ga=GA1.1.1694168275.1727378374&semt=ais_hybrid"
+              }
+              alt="User Avatar"
+            />
+            <div className={styles.username}>HamdyMohamedak</div>
+          </div>
+        </MenuPop>
         <nav className={styles.navItems}>
           <div className={styles.navItem}>Overview</div>
-          <div className={styles.navItem}>Projects</div>
+          <div
+            onClick={() => {
+              navigate("/ChatPage");
+            }}
+            className={styles.navItem}
+          >
+            Chat
+          </div>
           <div className={styles.navItem}>Dashboards</div>
 
           {/* Collapsible Sections with Logic */}
