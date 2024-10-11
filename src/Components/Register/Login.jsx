@@ -28,7 +28,7 @@ export default function Login() {
     formData.append("email", email);
     formData.append("password", password);
     if (profilePic) {
-      formData.append("profilePic", profilePic);
+      formData.append("profile_pic", profilePic);
     }
 
     try {
@@ -37,11 +37,8 @@ export default function Login() {
         headers: {
           "Content-Type": "multipart/form-data",
         },
-        body: formData,
+        body: JSON.stringify(formData),
       });
-      if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
-      }
 
       const json = await response.json();
       console.log(json);
