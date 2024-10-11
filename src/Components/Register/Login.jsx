@@ -20,8 +20,10 @@ export default function Login() {
   };
 
   const handleSignUp = async () => {
-    const formData = new FormData();
+    const url =
+      "https://dashboardchatapp-production.up.railway.app/api/v1/auth/register";
 
+    const formData = new FormData();
     formData.append("name", name);
     formData.append("email", email);
     formData.append("password", password);
@@ -30,32 +32,21 @@ export default function Login() {
     }
 
     try {
-      const response = await fetch(
-        "https://dashboardchatapp-production.up.railway.app/api/v1/auth/register",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
-
-      const contentType = response.headers.get("content-type");
-      let result;
-
-      if (contentType && contentType.includes("application/json")) {
-        result = await response.json();
-      } else {
-        result = await response.text();
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        body: formData,
+      });
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
       }
 
-      if (response.ok) {
-        console.log("Registration Successful:", result);
-
-        setFormType("login");
-      } else {
-        console.error("Registration Failed:", result);
-      }
+      const json = await response.json();
+      console.log(json);
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error(error.message);
     }
   };
 
