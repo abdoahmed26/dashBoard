@@ -55,6 +55,7 @@ export default function LeftSideBar() {
         className={`${styles.leftSideParent} ${sidebarOpen ? styles.open : ""}`}
       >
         <MenuPop
+          closeOnClickOutside={true}
           items={[
             {
               content: (
@@ -186,14 +187,48 @@ export default function LeftSideBar() {
             </summary>
           </details>
 
-          <details className={styles.details} open={openSection === "Social"}>
-            <summary
+          <MenuPop
+            closeOnClickOutside={true}
+            items={[
+              {
+                content: (
+                  <div>
+                    <b
+                      onClick={() => {
+                        window.open("https://hamdymohamedak.vercel.app");
+                      }}
+                      style={{ color: "black" }}
+                    >
+                      Resume
+                    </b>
+                  </div>
+                ),
+                onClick: () => console.log("Bold Item clicked"),
+              },
+              {
+                content: (
+                  <div>
+                    <b
+                      onClick={() => {
+                        window.open("https://github.com/hamdymohamedak");
+                      }}
+                      style={{ color: "black" }}
+                    >
+                      Github
+                    </b>
+                  </div>
+                ),
+                onClick: () => console.log("Italic Item clicked"),
+              },
+            ]}
+          >
+            <div
               className={styles.summary}
               onClick={() => toggleSection("Social")}
             >
               {Icons.SMS} Social
-            </summary>
-          </details>
+            </div>
+          </MenuPop>
         </nav>
       </section>
     </>

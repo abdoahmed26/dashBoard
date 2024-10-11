@@ -6,8 +6,8 @@ import { RoseRouter, Route } from "larose-js";
 export default function App() {
   return (
     <RoseRouter>
-      <Route element={<OverView />} path={"/Home"} />
-      <Route element={<Register />} path={"/"} />
+      <Route element={<OverView />} path={"/"} />
+      <Route element={<Register />} path={"/login"} />
       <Route element={<ChatPage />} path={"/ChatPage"} />
     </RoseRouter>
   );

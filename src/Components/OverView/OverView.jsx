@@ -72,6 +72,7 @@ export default function OverView() {
               xAxis={xAxis}
               series={series}
               height={250}
+              width={"50rem"}
               margin={{ top: 10, bottom: 10 }}
             />
           </div>

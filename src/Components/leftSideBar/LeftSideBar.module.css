@@ -42,7 +42,6 @@
   border-radius: 5px;
   z-index: 1100;
   cursor: pointer;
-  z-index: 9999;
 }
 
 @media (max-width: 1303px) {

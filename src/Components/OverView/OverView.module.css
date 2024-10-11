@@ -17,6 +17,7 @@
   align-items: center;
   gap: 2rem;
   overflow: hidden;
+  flex-wrap: wrap;
 }
 
 #spring {
